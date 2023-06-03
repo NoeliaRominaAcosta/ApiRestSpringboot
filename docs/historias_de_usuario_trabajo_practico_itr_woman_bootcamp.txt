@@ -1,0 +1,58 @@
+15:01 10/5/2023
+
+Trabajo Práctico Campus
+
+
+App "plan de carrera"
+
+A modo de ejemplo -pero no limitado a estos- se preveen 4 niveles de usuarios: 
+
+EMPLEADO (autogestiona su data, consulta oportunidades en forma individual)
+
+COACHES (además de las facilidades de EMPLEADO puede definir roles/perfiles y conocimientos y niveles requeridos y recursos disponibles para alcanzarlos) 
+
+ASIGNADORES (pms, sdms y lideres en gral, pueden informa de empleados p/ej evaluando o solicitando un cambio) o el area de seleccion (interesados en la precisión en la definición del perfil del candidato buscado o las novedades relacionadas con las oportunidades o candidatos internos que p/ej se encuentran capacitándose ya sea con cursos u otros medios )
+
+ENTREVISTADORES (referentes técnicos que validan las capacidades alcanzadas por los empleados ya sea mediante entrevistas o exámenes o por cualquier otro medio)
+
+
+
+Historias de usuario relacionadas con el plan de carrera en la organización:
+
+EMPLEADO
+
+Como empleado, quiero poder tener acceso a una descripción clara y detallada de los diferentes roles y responsabilidades dentro de mi departamento, para poder tomar decisiones informadas sobre mi carrera.
+
+Como empleado, quiero tener una conversación periódica con mi gerente de carrera para establecer metas y objetivos específicos a corto y largo plazo, para poder avanzar en mi carrera de manera significativa.
+
+Como empleado, quiero tener acceso a recursos de formación y desarrollo, como cursos y programas de capacitación, para poder adquirir las habilidades necesarias para avanzar en mi carrera.
+
+Como empleado, quiero tener la oportunidad de explorar diferentes áreas dentro de la organización, para poder descubrir nuevas oportunidades de carrera y expandir mi experiencia profesional.
+
+
+COACHES
+
+Como coach, quiero poder identificar y proporcionar oportunidades de crecimiento y promoción para mis coachees, para mantenerlos comprometidos y motivados en su carrera.
+
+Como coach, quiero poder identificar y evaluar las habilidades y competencias de cada uno de mis coachees, para poder desarrollar planes de carrera personalizados para ellos.
+
+Como coach, quiero poder monitorear y evaluar el progreso de mis coachees hacia sus objetivos de carrera, para poder proporcionarles retroalimentación y apoyo adecuados en su desarrollo profesional.
+
+
+ASIGNADORES
+
+Como sdm/pm/pl, quiero poder agregar una búsqueda a la lista de vacantes/oportunidades en la organización y poder proporcionar a los candidatos información precisa sobre c/ opp disponibles.
+
+Como sdm/pm/pl, quiero poder utilizar la información del plan de carrera de la organización para identificar por perfil/skills a los candidatos que estén evaluando y/o requiriendo un cambio o estén sin asignar o en vías de estarlo
+
+Como sdm/pm/pl, quiero poder realizar seguimiento a los candidatos que hayan expresado interés en una oportunidad de cambio en la organización, para poder proporcionarles información adicional y mantenerlos interesados en la posición.
+
+Como sdm/pm/pl, quiero poder colaborar con selección y reclutamiento en la organización para definir con precisión (pero a la vez flexibilidad) los requisitos para los perfiles definidos
+
+
+ENTREVISTADORES 
+
+Como entrevistador quiero poder identificar empleados que han realizado un curso y/o capacitación o dicen tener un determinado skill para contactarles y coordinar pasos a seguir
+
+Como entrevistador quiero poder consultar, informar y modificar los resultados de las entrevistas 
+

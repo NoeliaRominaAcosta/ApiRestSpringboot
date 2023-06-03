@@ -1,0 +1,57 @@
+Documento de Revisión de Código entre Pares
+Fecha de Revisión: 31 Mayo 2023
+Revisor/es: Linda , Abigail, Dainana, Fiorela
+Autor/es: Linda , Abigail, Dainana, Fiorela, Camila, Karen, Marina, Noelia, Oriana, Ludmina, Guillermina.
+
+Resumen de la Revisión:
+    La revisión de código es un proceso fundamental para evaluar y mejorar la calidad del código fuente de un programa.
+    En este caso, se está llevando a cabo una revisión de un código en Java utilizando la herramienta de análisis estático de código Sonar.
+    El propósito de esta revisión es identificar posibles problemas y mejorar la calidad del código.
+    Sonar es una herramienta que analiza el código en busca de vulnerabilidades, errores de programación, malas prácticas y otras cuestiones relacionadas con la calidad del código.
+    Al utilizar Sonar, se pueden identificar problemas comunes y aplicar correcciones para garantizar un código más limpio, legible y mantenible.
+    La revisión se lleva a cabo con el objetivo de detectar y solucionar problemas en el código, errores de programación, violaciones de buenas prácticas de programación y posibles mejoras en el rendimiento.
+
+Criterios de Revisión:
+    1. Cumplimiento de estándares de codificación: Se verifica si el código sigue los estándares de codificación establecidos, como convenciones de nomenclatura, estilo de indentación, uso de espacios en blanco, entre otros.
+    2. Buenas prácticas de programación: Se analiza si el código sigue las buenas prácticas de programación, como la cohesión y el acoplamiento adecuados, la modularidad, el principio de responsabilidad única, entre otros.
+    3. Complejidad y mantenibilidad: Se evalúa la complejidad del código, incluyendo la cantidad de líneas de código, la complejidad ciclomática, la anidación excesiva, la falta de comentarios y la presencia de código duplicado. Se busca asegurar que el código sea mantenible y fácil de entender y modificar en el futuro.
+    4. Eficiencia y rendimiento: Se analiza si el código utiliza de manera eficiente los recursos, evitando bucles o algoritmos innecesariamente complejos. Se evalúa el uso adecuado de estructuras de datos y algoritmos optimizados para mejorar el rendimiento del código.
+    5. Seguridad: Se identifican vulnerabilidades de seguridad en el código, como posibles ataques de inyección de código SQL o Cross-Site Scripting (XSS), y se recomiendan soluciones para mitigar estos riesgos.
+    6. Manejo de excepciones y errores: Se verifica si el código maneja adecuadamente las excepciones y errores, evitando supresión de excepciones, capturando y registrando errores de manera adecuada.
+    7. Comentarios y documentación: Se evalúa la presencia de comentarios y documentación adecuada en el código para facilitar la comprensión y el mantenimiento del mismo.
+    8. Pruebas unitarias: Se verifica si el código incluye pruebas unitarias adecuadas que cubren la funcionalidad y ayudan a asegurar la calidad y la corrección del código.
+
+Resultados de la Revisión:
+    Durante la revisión del código utilizando Sonar, se identificaron algunos errores y deficiencias que afectan la calidad del código y su mantenibilidad.
+    A continuación, se detallan los problemas encontrados y los comentarios específicos sobre cada uno de ellos:
+
+    1. Falta de un estándar para la creación de rutas:
+        Identificación del problema: No se siguió un estándar consistente para la creación de rutas en el código.
+        Ubicación en el código: Se encontraron rutas creadas con diferentes estilos y convenciones en el mapper.
+        Descripción del problema: La falta de un estándar para la creación de rutas dificulta la comprensión y el mantenimiento del código.
+        Recomendaciones: Se sugiere establecer un estándar de creación de rutas y comunicarlo al equipo de desarrollo para garantizar la consistencia en el código.
+
+    2. Falta de uso de Swagger para documentación:
+        Identificación del problema: Algunos miembros del equipo no utilizaron Swagger para documentar las API.
+        Ubicación en el código: Se encontraron API que carecen de documentación adecuada o no utilizan Swagger para generar la documentación.
+        Descripción del problema: La falta de documentación adecuada dificulta la comprensión y el uso correcto de las API.
+        Recomendaciones: Se recomienda que todos los miembros del equipo utilicen Swagger para documentar adecuadamente las API, lo que facilitará la comprensión y el mantenimiento del código.
+
+    3. Diferentes estilos de nombramiento de entidades:
+        Identificación del problema: Algunos miembros del equipo utilizaron diferentes estilos de nomenclatura para las entidades.
+        Ubicación en el código: Se encontraron entidades con nombres en camel case y otros en snake case.
+        Descripción del problema: La falta de consistencia en el estilo de nombramiento dificulta la lectura y comprensión del código.
+        Recomendaciones: Se sugiere establecer un estándar de código que defina un estilo de nombramiento consistente, como el uso de camel case para entidades y snake case para la parte SQL.
+        Comunicar este estándar al equipo y realizar los cambios necesarios para mantener la consistencia.
+
+Comentarios adicionales:
+    Se recomienda establecer un proceso de revisión y validación del código antes de la implementación para garantizar que se sigan los estándares y prácticas definidas.
+    La comunicación y la colaboración dentro del equipo son clave para asegurar la coherencia y la calidad del código. Se sugiere mantener una comunicación constante para discutir y resolver problemas relacionados con el código.
+
+Conclusiones:
+    La revisión del código reveló la falta de un estándar para la creación de rutas, el uso inconsistente de Swagger para documentación y la falta de un estilo de nombramiento de entidades consistente. Estos problemas pueden afectar la legibilidad, la mantenibilidad y la coherencia del código.
+    Se recomienda establecer un estándar de código y comunicarlo al equipo, así como fomentar la comunicación y la colaboración para garantizar la adhesión a los estándares establecidos.
+    Al abordar estos problemas, se espera mejorar la calidad y la consistencia del código en el proyecto.
+
+Acciones Tomadas:
+    Comunicar al equipo para que tomen conocimiento de los problemas que se revisaron, con el motivo de evitar las malas prácticas en el proyecto.

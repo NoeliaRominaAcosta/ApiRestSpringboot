@@ -1,0 +1,97 @@
+Documento de Seguimiento - Funcionalidades Pendientes (GAP)
+
+Fecha: 31 Mayo 2023
+
+Equipo de Desarrollo: Linda , Abigail, Dainana, Fiorela, Camila, Karen, Marina, Noelia, Oriana, Ludmina, Guillermina.
+
+--------------------------------- Assigner
+
+Entidad: Assigner
+Funcionalidad: Consultar datos personales
+Descripci�n: Siguiendo las historias de usuarios, se creo esta funcionalidad con el fin de que el assigner pueda consultad sus datos personales.
+Para ver la consulta usamos esta ruta: GET  localhost:8080/api/assigner/get/dni
+La consulta se hizo a travez del dni, ya que este no se repite.
+
+Entidad: Assigner
+Funcionalidad: Editar datos personales
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+Entidad: Assigner
+Funcionalidad: Agregar oportunidad
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+Entidad: Assigner
+Funcionalidad: Filtrar empleados por skills
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+Entidad: Assigner
+Funcionalidad: Listar candidatos y las oportunidades a las que se anotaron
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+--------------------------------- Coach
+
+Entidad: Coach
+Funcionalidad: Consultar datos personales
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+Entidad: Coach
+Funcionalidad: Editar datos personales
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+Entidad: Coach
+Funcionalidad: Asignar rol a empleado
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+Entidad: Coach
+Funcionalidad: Agregar skill a empleado
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+Entidad: Coach
+Funcionalidad: Crear skill
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+Entidad: Coach
+Funcionalidad: Consultar objetivos y resources del empleado
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+--------------------------------- Employee
+
+Entidad: Employee
+Funcionalidad:
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+--------------------------------- Department
+
+Entidad: Departament
+Funcionalidad:
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+--------------------------------- Opportunity
+
+Entidad: Opportunity
+Funcionalidad:
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+--------------------------------- Resource
+
+Entidad: Resource
+Funcionalidad:
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+--------------------------------- Role
+
+Entidad: Role
+Funcionalidad:
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+--------------------------------- Skill
+
+Entidad: Skill
+Funcionalidad:
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+
+--------------------------------- User
+
+Entidad: User
+Funcionalidad:
+Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
