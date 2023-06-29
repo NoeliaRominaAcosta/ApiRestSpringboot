@@ -14,7 +14,7 @@ import java.util.List;
 @ToString
 public class Role {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -22,6 +22,7 @@ public class Role {
     private String description;
 
     private String seniority;
+
 
     @ManyToOne
     @JoinColumn(name = "department_id")

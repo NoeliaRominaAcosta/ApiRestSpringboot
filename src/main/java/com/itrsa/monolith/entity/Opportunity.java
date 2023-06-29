@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -15,10 +16,13 @@ import java.util.List;
 
 public class Opportunity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String code;
+
     private String opportunityName;
+
     private String description;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -28,4 +32,7 @@ public class Opportunity {
             inverseJoinColumns = {@JoinColumn(name = "skill_id")}
     )
     List<Skill> skillListOpportunity;
+
+    @ManyToMany(mappedBy = "opportunityList")
+    Set<Employee> employeeList;
 }

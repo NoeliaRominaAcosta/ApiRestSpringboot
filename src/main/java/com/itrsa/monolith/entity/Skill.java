@@ -14,7 +14,7 @@ import java.util.List;
 @ToString
 public class Skill {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String skillCode;
     private String name;

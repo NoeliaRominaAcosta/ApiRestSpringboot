@@ -1,6 +1,7 @@
 package com.itrsa.monolith.service;
 
 import com.itrsa.monolith.dto.RoleDTO;
+import com.itrsa.monolith.dto.RoleDepartmentDTO;
 
 public interface RoleService {
 
@@ -14,4 +15,6 @@ public interface RoleService {
 
     void deleteById(Long id);
     void editDepartment(Long departmentId, Long rolId);
+
+    Iterable<RoleDepartmentDTO> findRoleDepartments();
 }

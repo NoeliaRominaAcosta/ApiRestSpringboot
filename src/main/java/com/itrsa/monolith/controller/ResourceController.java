@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/api/resource")
 public class ResourceController {
 
@@ -26,7 +27,7 @@ public class ResourceController {
 
     @Operation(summary = "Get all resources")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Recursos obtenidos",
+            @ApiResponse(responseCode = "200", description = "Resources obtained",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Resource.class)) })})
     @GetMapping
@@ -37,7 +38,7 @@ public class ResourceController {
 
     @Operation(summary = "Get a resource by name")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Recurso obtenido",
+            @ApiResponse(responseCode = "200", description = "Resource obtained",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Resource.class)) })})
     @GetMapping("/get/{name}")
@@ -45,7 +46,6 @@ public class ResourceController {
     public ResourceDTO getResourceByName(@PathVariable String name) {
         return resourceService.findByName(name);
     }
-
 
     @Operation(summary = "Save resource")
     @ApiResponses(value = {
@@ -60,7 +60,7 @@ public class ResourceController {
 
     @Operation(summary = "Update resource")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Recurso actualizado",
+            @ApiResponse(responseCode = "200", description = "Resource updated",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Resource.class)) })})
     @PutMapping("/update/{name}")
@@ -79,7 +79,8 @@ public class ResourceController {
 
     @Operation(summary = "Delete resource")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Recurso eliminado",
+
+            @ApiResponse(responseCode = "200", description = "Resource deleted successfully",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Resource.class)) })})
     @DeleteMapping("/delete/{name}")

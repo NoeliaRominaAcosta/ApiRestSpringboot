@@ -1,9 +1,8 @@
 package com.itrsa.monolith.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-@Getter
-@Setter
+import lombok.Data;
+
+@Data
 public class EmployeeDTO {
     private String name;
     private String lastName;

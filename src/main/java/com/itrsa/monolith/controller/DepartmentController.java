@@ -19,7 +19,7 @@ public class DepartmentController {
         this.service = service;
     }
 
-    @Operation(summary = "Gets all departments")
+    @Operation(summary = "Get all departments")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Departments obtained",
                     content = { @Content(mediaType = "application/json",
@@ -43,7 +43,7 @@ public class DepartmentController {
 
     @Operation(summary = "Get department by id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Get department by id",
+            @ApiResponse(responseCode = "200", description = "Department obtained",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Department.class)) })})
     @GetMapping("/{id}")
@@ -71,7 +71,7 @@ public class DepartmentController {
     @ResponseStatus(HttpStatus.OK)
     public void deleteDepartment(@PathVariable Long id) {service.deleteDepartmentById(id); }
 
-    @Operation(summary = "Get all role by department")
+    @Operation(summary = "Get all roles by department")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Roles obtained by department",
                     content = { @Content(mediaType = "application/json",

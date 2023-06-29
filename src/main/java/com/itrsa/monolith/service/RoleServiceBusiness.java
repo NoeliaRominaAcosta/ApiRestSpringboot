@@ -1,5 +1,6 @@
 package com.itrsa.monolith.service;
 
+import com.itrsa.monolith.dto.RoleDepartmentDTO;
 import com.itrsa.monolith.entity.Department;
 import com.itrsa.monolith.mapper.RoleMapper;
 import com.itrsa.monolith.dto.RoleDTO;
@@ -9,6 +10,9 @@ import com.itrsa.monolith.repository.RoleRepository;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityManager;
 
 @Component
 public class RoleServiceBusiness implements RoleService{
@@ -17,9 +21,13 @@ public class RoleServiceBusiness implements RoleService{
     @Autowired
     private DepartmentRepository departmentRepository;
 
+    @Autowired
     public RoleServiceBusiness(RoleRepository repository) {
         this.repository = repository;
     }
+
+    @Autowired
+    EntityManager entityManager;
 
     @Override
     public Iterable<RoleDTO> findAll() {
@@ -33,7 +41,6 @@ public class RoleServiceBusiness implements RoleService{
         Role rolEntity = mapper.toRole(dto);
         Department departmentEntity = departmentRepository.findDepartmentById(departmentId);
         rolEntity.setDepartment(departmentEntity);
-
         repository.save(rolEntity);
     }
 
@@ -44,8 +51,10 @@ public class RoleServiceBusiness implements RoleService{
     }
 
     @Override
+    @Transactional
     public void edit(RoleDTO dto, Long id) {
         Role role = repository.findRoleById(id);
+        entityManager.refresh(role);
         role.setName(dto.getName());
         role.setDescription(dto.getDescription());
         role.setSeniority(dto.getSeniority());
@@ -59,13 +68,20 @@ public class RoleServiceBusiness implements RoleService{
     }
 
     @Override
+    @Transactional
     public void editDepartment(Long departmentId, Long roleId) {
         Department departmentEntity = departmentRepository.findDepartmentById(departmentId);
+        entityManager.refresh(departmentEntity);
         Role roleEntity = repository.findRoleById(roleId);
-
+        entityManager.refresh(roleEntity);
         roleEntity.setDepartment(departmentEntity);
-
         repository.save(roleEntity);
+    }
+
+    @Override
+    public Iterable<RoleDepartmentDTO> findRoleDepartments() {
+        var mapper = Mappers.getMapper(RoleMapper.class);
+        return mapper.toRoleDepartmentList(repository.findAll());
     }
 
 }

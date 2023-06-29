@@ -1,22 +1,18 @@
 package com.itrsa.monolith.service;
 
+import com.itrsa.monolith.dto.EmployeeShorterDTO;
 import com.itrsa.monolith.dto.ResourceDTO;
-import com.itrsa.monolith.entity.Coach;
-import com.itrsa.monolith.entity.Employee;
-import com.itrsa.monolith.entity.Role;
-import com.itrsa.monolith.entity.Skill;
+import com.itrsa.monolith.entity.*;
 import com.itrsa.monolith.mapper.ResourceMapper;
-import com.itrsa.monolith.repository.RoleRepository;
-import com.itrsa.monolith.repository.CoachRepository;
-import com.itrsa.monolith.repository.SkillRepository;
+import com.itrsa.monolith.repository.*;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import com.itrsa.monolith.mapper.EmployeeMapper;
 import com.itrsa.monolith.dto.EmployeeDTO;
-import com.itrsa.monolith.repository.EmployeeRepository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
 import java.util.Optional;
 
 
@@ -30,18 +26,25 @@ public class EmployeeServiceBusiness implements EmployeeService {
     private SkillRepository skillRepo;
 
     @Autowired
-
     private RoleRepository roleRepo;
 
+    @Autowired
     private CoachRepository coachRepo;
 
+    @Autowired
+    private ResourceRepository resourceRepo;
+
+    @Autowired
+    private OpportunityRepository opportunityRepo;
+
+    @Autowired
+    private EntityManager entityManager;
 
     @Override
     public Iterable<EmployeeDTO> findAll() {
         var mapper = Mappers.getMapper(EmployeeMapper.class);
         return mapper.toList(repository.findAll());
     }
-
 
     @Override
     public void save(EmployeeDTO dto, String dniCoach) {
@@ -59,8 +62,10 @@ public class EmployeeServiceBusiness implements EmployeeService {
     }
 
     @Override
+    @Transactional
     public void edit(EmployeeDTO dto) {
         Employee employee = repository.findByDni(dto.getDni());
+        entityManager.refresh(employee);
         employee.setName(dto.getName());
         employee.setLastName(dto.getLastName());
         employee.setShortGoal(dto.getShortGoal());
@@ -99,10 +104,36 @@ public class EmployeeServiceBusiness implements EmployeeService {
     }
 
     @Override
+    public void addResource(String employeeDni, Long resourceId) {
+        Resource resource = resourceRepo.findById(resourceId).orElse(null);
+        Employee employee = repository.findByDni(employeeDni);
+        employee.getResourceList().add(resource);
+        repository.save(employee);
+    }
+
+    @Override
+    public void addOpportunity(String employeeDni, Long opportunityId) {
+        Opportunity opportunity = opportunityRepo.findById(opportunityId).orElse(null);
+        Employee employee = repository.findByDni(employeeDni);
+        employee.getOpportunityList().add(opportunity);
+        repository.save(employee);
+
+    }
+
+    @Override
     public Iterable<ResourceDTO> listResources(String dni) {
-        Employee employee= repository.findByDni(dni);
+        Employee employee = repository.findByDni(dni);
         var mapper = Mappers.getMapper(ResourceMapper.class);
 
         return mapper.toList(employee.getResourceList());
     }
+
+    @Override
+    public Iterable<EmployeeShorterDTO> listEmployeesBySkill(String skillCode) {
+        Skill skillEntity = skillRepo.findBySkillCode(skillCode);
+        var mapper = Mappers.getMapper(EmployeeMapper.class);
+
+        return mapper.toListEmployeeShorter(skillEntity.getEmployeeList());
+    }
+
 }

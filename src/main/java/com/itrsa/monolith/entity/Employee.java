@@ -36,7 +36,6 @@ public class Employee {
     )
     List<Skill> skillList;
 
-
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "employee_role",
@@ -51,8 +50,6 @@ public class Employee {
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
-
-
             name = "employee_resource",
             joinColumns = {@JoinColumn(name = "employee_id")},
             inverseJoinColumns = {@JoinColumn(name = "resource_id")}
@@ -61,7 +58,6 @@ public class Employee {
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
-
             name = "employee_opportunity",
             joinColumns = {@JoinColumn(name = "employee_id")},
             inverseJoinColumns = {@JoinColumn(name = "opportunity_id")}

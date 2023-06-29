@@ -14,7 +14,6 @@ public interface AssignerMapper {
     @Mapping(target="longGoal", source="entity.longGoal")
     AssignerDTO toAssignerDTO(Assigner entity);
 
-
     @Mapping(target="name", source="dto.name")
     @Mapping(target="lastname", source="dto.lastname")
     @Mapping(target="dni", source="dto.dni")

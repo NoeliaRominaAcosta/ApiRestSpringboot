@@ -1,11 +1,11 @@
 package com.itrsa.monolith.dto;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class SkillDTO {
     private String skillCode;
+
     private String name;
+
     private String seniority;
 }

@@ -1,15 +1,13 @@
 Documento de Revisión de Código entre Pares
 Fecha de Revisión: 31 Mayo 2023
 Revisor/es: Linda , Abigail, Dainana, Fiorela
-Autor/es: Linda , Abigail, Dainana, Fiorela, Camila, Karen, Marina, Noelia, Oriana, Ludmina, Guillermina.
+Autor/es: Linda , Abigail, Dainana, Fiorella, Camila, Karen, Marina, Noelia, Oriana, Ludmila, Guillermina.
 
 Resumen de la Revisión:
     La revisión de código es un proceso fundamental para evaluar y mejorar la calidad del código fuente de un programa.
     En este caso, se está llevando a cabo una revisión de un código en Java utilizando la herramienta de análisis estático de código Sonar.
     El propósito de esta revisión es identificar posibles problemas y mejorar la calidad del código.
     Sonar es una herramienta que analiza el código en busca de vulnerabilidades, errores de programación, malas prácticas y otras cuestiones relacionadas con la calidad del código.
-    Al utilizar Sonar, se pueden identificar problemas comunes y aplicar correcciones para garantizar un código más limpio, legible y mantenible.
-    La revisión se lleva a cabo con el objetivo de detectar y solucionar problemas en el código, errores de programación, violaciones de buenas prácticas de programación y posibles mejoras en el rendimiento.
 
 Criterios de Revisión:
     1. Cumplimiento de estándares de codificación: Se verifica si el código sigue los estándares de codificación establecidos, como convenciones de nomenclatura, estilo de indentación, uso de espacios en blanco, entre otros.

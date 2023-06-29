@@ -5,16 +5,25 @@ import com.itrsa.monolith.dto.ResourceDTO;
 import com.itrsa.monolith.entity.Resource;
 import com.itrsa.monolith.repository.ResourceRepository;
 import org.mapstruct.factory.Mappers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityManager;
 
 @Component
 
 public class ResourceServiceBusiness implements ResourceService{
+    @Autowired
     private ResourceRepository resourceRepository;
 
+    @Autowired
     public ResourceServiceBusiness(ResourceRepository resourceRepository) {
         this.resourceRepository = resourceRepository;
     }
+
+    @Autowired
+    EntityManager entityManager;
 
     @Override
     public Iterable<ResourceDTO> findAll() {
@@ -33,9 +42,11 @@ public class ResourceServiceBusiness implements ResourceService{
     }
 
     @Override
+    @Transactional
     public void update(ResourceDTO dto) {
        String name = dto.getName();
        Resource entity = resourceRepository.findByName(name);
+       entityManager.refresh(entity);
        entity.setName(dto.getName());
        entity.setDescription(dto.getDescription());
        entity.setUrl(dto.getUrl());
@@ -49,8 +60,6 @@ public class ResourceServiceBusiness implements ResourceService{
         Resource resource = resourceRepository.findByName(name);
         resourceRepository.delete(resource);
     }
-
-
 
 }
 

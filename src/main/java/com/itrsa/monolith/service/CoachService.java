@@ -1,4 +1,5 @@
 package com.itrsa.monolith.service;
+
 import com.itrsa.monolith.dto.CoachDTO;
 import com.itrsa.monolith.dto.EmployeeDTO;
 
@@ -15,5 +16,7 @@ public interface CoachService {
     void deleteByDni(String dni);
 
     Iterable<EmployeeDTO> listEmployees(String dni);
+
+
 
 }

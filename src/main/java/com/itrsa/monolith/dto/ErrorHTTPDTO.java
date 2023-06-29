@@ -1,14 +1,15 @@
 package com.itrsa.monolith.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class ErrorHTTPDTO {
 
     private String tipo;
+
     private int codigo;
+
     private String estado;
+
     private String detalle;
 }

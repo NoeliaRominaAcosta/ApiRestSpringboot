@@ -1,5 +1,6 @@
 package com.itrsa.monolith.mapper;
 
+import com.itrsa.monolith.dto.EmployeeShorterDTO;
 import com.itrsa.monolith.entity.Employee;
 import com.itrsa.monolith.dto.EmployeeDTO;
 import org.mapstruct.Mapper;
@@ -21,5 +22,10 @@ public interface EmployeeMapper {
     @Mapping(target = "id", ignore = true)
     Employee toEmployee(EmployeeDTO dto);
 
+    @Mapping(target="name", source="entity.name")
+    @Mapping(target="lastName", source="entity.lastName")
+    @Mapping(target="dni", source="entity.dni")
+    EmployeeShorterDTO toEmployeeOpportunityDTO(Employee entity);
     Iterable<EmployeeDTO> toList(Iterable<Employee> employees);
+    Iterable<EmployeeShorterDTO> toListEmployeeShorter(Iterable<Employee> employees);
 }

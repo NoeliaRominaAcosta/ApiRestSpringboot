@@ -2,96 +2,96 @@ Documento de Seguimiento - Funcionalidades Pendientes (GAP)
 
 Fecha: 31 Mayo 2023
 
-Equipo de Desarrollo: Linda , Abigail, Dainana, Fiorela, Camila, Karen, Marina, Noelia, Oriana, Ludmina, Guillermina.
+Equipo de Desarrollo: Daiana, Linda, FiorelLa, Abigail, Camila, Karen, Marina, Noelia, Oriana, Ludmila, Guillermina.
 
---------------------------------- Assigner
-
-Entidad: Assigner
-Funcionalidad: Consultar datos personales
-Descripci�n: Siguiendo las historias de usuarios, se creo esta funcionalidad con el fin de que el assigner pueda consultad sus datos personales.
-Para ver la consulta usamos esta ruta: GET  localhost:8080/api/assigner/get/dni
-La consulta se hizo a travez del dni, ya que este no se repite.
-
-Entidad: Assigner
-Funcionalidad: Editar datos personales
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
-
-Entidad: Assigner
-Funcionalidad: Agregar oportunidad
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
-
-Entidad: Assigner
-Funcionalidad: Filtrar empleados por skills
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
-
-Entidad: Assigner
-Funcionalidad: Listar candidatos y las oportunidades a las que se anotaron
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
-
---------------------------------- Coach
-
-Entidad: Coach
-Funcionalidad: Consultar datos personales
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
-
-Entidad: Coach
-Funcionalidad: Editar datos personales
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
-
-Entidad: Coach
-Funcionalidad: Asignar rol a empleado
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
-
-Entidad: Coach
-Funcionalidad: Agregar skill a empleado
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
-
-Entidad: Coach
-Funcionalidad: Crear skill
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
-
-Entidad: Coach
-Funcionalidad: Consultar objetivos y resources del empleado
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
 
 --------------------------------- Employee
 
+TO DO: funcionalidad pendiente.
+DONE: funcionalidad realizada.
+
+------------------------------------------------------------------------------------>>>
 Entidad: Employee
-Funcionalidad:
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
 
---------------------------------- Department
+Funcionalidad (DONE): Consulta y edición de datos personales
+Descripción: Autogetión de datos personales.
+Endpoint: GET  localhost:8080/api/employee/{dni}
+          PUT localhost:8080/api/employee/edit
 
-Entidad: Departament
-Funcionalidad:
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+Funcionalidad (DONE): Acceso a descripción de roles y responsabilidades
+Descripción: Permite al empleado acceder a una descripción clara y detallada de los diferentes roles y responsabilidades dentro de su departamento. Esto le ayuda a tomar decisiones informadas sobre su carrera.
+Endpoint: GET localhost:8080/api/department/listRoles/{departmentId}
 
---------------------------------- Opportunity
+Funcionalidad (DONE): Conversaciones periódicas con el gerente de carrera
+Descripción: Permite al empleado tener conversaciones periódicas con su gerente de carrera para establecer metas y objetivos específicos a corto y largo plazo. Esto ayuda al empleado a avanzar en su carrera de manera significativa.
+Endpoint: GET  localhost:8080/api/employee/{dni}
 
-Entidad: Opportunity
-Funcionalidad:
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+Funcionalidad (DONE): Acceso a recursos de formación y desarrollo
+Descripción: Proporciona al empleado acceso a recursos de formación y desarrollo, como cursos y programas de capacitación. Esto le permite adquirir las habilidades necesarias para avanzar en su carrera.
+Endpoint: GET  localhost:8080/api/resource/all
+          GET  localhost:8080/api/resource/addResource/{employeeDni}/{resourceId}
 
---------------------------------- Resource
+Funcionalidad(DONE): Consultar y anotarse a una oportunidad
+Descripcion: Descubrir nuevas oportunidades de carrera y expandir su experiencia profesional.
+Endpoint: GET  localhost:8080/api/opportunity/list
+          GET  localhost:8080/api/oportunity/addOpportunity/{employeeDni}/{opportunityId}
 
-Entidad: Resource
-Funcionalidad:
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+Funcionalidad (DONE): Exploración de diferentes áreas dentro de la organización
+Descripción: Permite al empleado tener la oportunidad de explorar diferentes áreas dentro de la organización. Esto le ayuda a descubrir nuevas oportunidades de carrera y expandir su experiencia profesional.
+Endpoint: GET  localhost:8080/api/role/department
 
---------------------------------- Role
+------------------------------------------------------------------------------------>>>
+Entidad: Coaches
 
-Entidad: Role
-Funcionalidad:
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+Funcionalidad (DONE): Consulta y edición de datos personales.
+Descripción: Autogetión de datos personales.
+Endpoint: GET  localhost:8080/api/coach/get/{dni}
+          PUT  localhost:8080/api/coach/update/{dni}
 
---------------------------------- Skill
+Funcionalidad (DONE): Identificación y proporcionar oportunidades de crecimiento y promoción
+Descripción: Permite al coach identificar y proporcionar oportunidades de crecimiento y promoción a sus coachees. Esto ayuda a mantener a los empleados comprometidos y motivados en su carrera.
+Endpoint: POST localhost:8080/api/employee/addRole/{employeeDni}/{roleId}
 
-Entidad: Skill
-Funcionalidad:
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+Funcionalidad (DONE): Identificación y evaluación de habilidades y competencias
+Descripción: Permite al coach identificar y evaluar las habilidades y competencias de cada coachee. Esto ayuda a desarrollar planes de carrera personalizados para cada empleado.
+Endpoint: POST localhost:8080/api/employee/addSkill/{employeeId}/{skillId}
+          POST localhost:8080/api/skill/create
 
---------------------------------- User
+Funcionalidad (DONE): Monitoreo y evaluación del progreso hacia los objetivos de carrera
+Descripción: Permite al coach monitorear y evaluar el progreso de los coachees hacia sus objetivos de carrera. Esto facilita proporcionar retroalimentación y apoyo adecuados en su desarrollo profesional.
+Endpoint: GET localhost:8080/api/employee/resourcesgoals/{dni}
 
-Entidad: User
-Funcionalidad:
-Descripci�n: [Breve descripci�n de la funcionalidad que hace falta desarrollar]
+------------------------------------------------------------------------------------>>>
+Entidad: Assigner
+
+Funcionalidad (DONE): Consulta y edición de datos personales
+Descripción: Autogetión de datos personales.
+Endpoint: GET  localhost:8080/api/assigner/get/dni
+          PUT  localhost:8080/api/assigner/edit
+
+Funcionalidad (DONE): Agregar búsqueda a la lista de vacantes/oportunidades
+Descripción: Permite a los sdm/pm/pl agregar una búsqueda a la lista de vacantes/oportunidades en la organización y proporcionar información precisa sobre cada oportunidad a los candidatos interesados.
+Endpoint: POST localhost:8080/api/opportunity/create
+
+Funcionalidad (DONE): Utilizar información del plan de carrera para identificar candidatos
+Descripción: Permite a los sdm/pm/pl utilizar la información del plan de carrera de la organización para identificar candidatos según su perfil, habilidades y niveles requeridos. Esto facilita evaluar y asignar candidatos a oportunidades de cambio.
+Endpoint: GET localhost:8080/api/employee/skill/{skillCode}
+
+Funcionalidad (DONE): Seguimiento de candidatos interesados en una oportunidad
+Descripción: Permite a los sdm/pm/pl realizar un seguimiento de los candidatos que han expresado interés en una oportunidad de cambio en la organización. Esto incluye proporcionar información adicional y mantener el interés del candidato en la posición.
+Endponit: GET  localhost:8080/api/opportunity/applicants/{code}
+
+Funcionalidad (TO DO): Colaborar con selección y reclutamiento para definir requisitos de perfiles
+Descripción: Permite a los sdm/pm/pl colaborar con el área de selección y reclutamiento para definir con precisión los requisitos de los perfiles de los candidatos. Esto ayuda a garantizar una definición clara pero flexible de los perfiles buscados.
+
+------------------------------------------------------------------------------------>>>
+Entidad: Interviewer (TO DO)
+
+Funcionalidad: Consulta y edición de datos personales
+Descripción: Autogetión de datos personales.
+
+Funcionalidad: Identificación de empleados que han realizado cursos o tienen determinadas habilidades
+Descripción: Permite al entrevistador identificar a los empleados que han realizado cursos o poseen habilidades específicas. Esto facilita contactarles y coordinar los siguientes pasos, como entrevistas o exámenes.
+
+Funcionalidad: Consulta, informe y modificación de resultados de entrevistas
+Descripción: Permite al entrevistador consultar, informar y modificar los resultados de las entrevistas realizadas a los empleados. Esto ayuda a mantener un registro actualizado de los procesos de evaluación y selección.

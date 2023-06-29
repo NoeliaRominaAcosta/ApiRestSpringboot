@@ -1,10 +1,8 @@
 package com.itrsa.monolith.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class OpportunityDTO {
     private String code;
     private String opportunityName;

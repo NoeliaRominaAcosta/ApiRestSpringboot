@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/api/coach")
 public class CoachController {
 
@@ -27,7 +28,7 @@ public class CoachController {
 
     @Operation(summary = "Get all coaches")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Caoch obtenidos",
+            @ApiResponse(responseCode = "200", description = "Coaches obtained",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Coach.class)) })})
     @GetMapping
@@ -38,7 +39,7 @@ public class CoachController {
 
     @Operation(summary = "Get a coach by dni")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Coach obtenido",
+            @ApiResponse(responseCode = "200", description = "Coach obtained",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Coach.class)) })})
     @GetMapping("/get/{dni}")
@@ -46,7 +47,6 @@ public class CoachController {
     public CoachDTO getCoachByDni(@PathVariable String dni) {
         return coachService.findByDni(dni);
     }
-
 
     @Operation(summary = "Save coach")
     @ApiResponses(value = {
@@ -89,10 +89,9 @@ public class CoachController {
         coachService.deleteByDni(dni);
     }
 
-
-    @Operation(summary = "Get all employee")
+    @Operation(summary = "Get all employees")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Employee obtenidos",
+            @ApiResponse(responseCode = "200", description = "Employees obtained",
                     content = { @Content(mediaType = "application/json",
                             schema = @Schema(implementation = Coach.class)) })})
     @GetMapping("/listEmployee/{dniCoach}")
@@ -100,7 +99,5 @@ public class CoachController {
     public Iterable<EmployeeDTO> getAllEmployee(@PathVariable String dniCoach) {
         return coachService.listEmployees(dniCoach);
     }
-
-
 
 }
